@@ -1,0 +1,11 @@
+import subprocess
+
+video_file = '/_input/input.mp4'  # Cambia 'video.mp4' por el nombre de tu archivo de video
+output_file = 'video_girado.mp4'  # Cambia 'video_girado.mp4' por el nombre que quieras para el archivo girado
+
+# Comando de FFMPEG para girar el video 45 grados en sentido antihorario
+ffmpeg_command = ['ffmpeg', '-i', video_file, '-vf', 'rotate=-45*PI/180', '-c:a', 'copy', output_file]
+
+# Ejecutar el comando con subprocess
+subprocess.run(ffmpeg_command)
+
